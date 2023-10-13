@@ -49,7 +49,7 @@ void Calculator::print_symbol() {
         symbol.pop();
     }
 }
-bool Calculator::isNumber(const std::string& str) {
+bool Calculator::is_number(const std::string& str) {
     for (char c : str) {
         if (!isdigit(c)) {
             return false;
@@ -72,7 +72,7 @@ void Calculator::curly_bracket_processing(){
     while (infix.top()!=")"){
         if (infix.top()=="("){
             curly_bracket_processing();
-        } else if (isNumber(infix.top())){
+        } else if (is_number(infix.top())){
             suffix.push(infix.top());
             infix.pop();
         } else if ((infix.top()=="+"||infix.top()=="-"||infix.top()=="*"||infix.top()=="/")&&symbol.top()=="("){
@@ -108,7 +108,7 @@ void Calculator::curly_bracket_processing(){
 
 void Calculator::infix_to_suffix() {
     while (!infix.empty()){
-        if (isNumber(infix.top())) {
+        if (is_number(infix.top())) {
             suffix.push(infix.top());
             infix.pop();
         }else if ((infix.top()=="+"||infix.top()=="-"||infix.top()=="*"||infix.top()=="/")&&symbol.empty()){
@@ -155,7 +155,7 @@ void Calculator::suffix_flipping() {
 
 void Calculator::calculation_results() {
     while (!suffix.empty()){
-        if (isNumber(suffix.top())) {
+        if (is_number(suffix.top())) {
             count.push(suffix.top());
             suffix.pop();
         } else if (suffix.top()=="+"||suffix.top()=="-"||suffix.top()=="*"||suffix.top()=="/") {

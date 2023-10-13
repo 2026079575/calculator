@@ -23,7 +23,7 @@ public:
     //输出字符栈
     void print_symbol();
     //判断是否为数字
-    bool isNumber(const std::string& str);
+    bool is_number(const std::string& str);
     //分割入栈
     void segmentation_str(const string &str);
     //判断优先级

@@ -26,6 +26,7 @@ int main() {
             cout << "输入格式有问题,请重新输入!" << endl;
             cout << "请输入: ";
         }else{
+            calculator.initialization();
             calculator.segmentation_str(input);
             calculator.infix_to_suffix();
             calculator.calculation_results();

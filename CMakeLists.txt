@@ -8,5 +8,5 @@ include_directories(calculator)
 add_executable(calculator
         calculator/calculator.h
         calculator/calculator.cpp
-        calculator/calculatorMain.cpp
+        calculator/calculatorMain.cpp2
 )
